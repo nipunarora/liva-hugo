@@ -1,4 +1,5 @@
 <div class="col-lg-4">
+  {{ if .Site.Params.sidebar.about_enable }}
   <!-- about -->
   <div class="widget">
     {{ with .Site.GetPage "/about" }}
@@ -11,6 +12,7 @@
     <a href="{{ .Permalink }}" class="btn btn-outline-primary">Know More</a>
     {{ end }}
   </div>
+  {{ end }}
   <!-- category -->
   <div class="widget">
     <h4 class="widget-title">Category</h4>
@@ -40,6 +42,7 @@
     {{- end }}
     {{- end }}
   </div>
+  {{ if .Site.Params.sidebar.social_enable }}
   <!-- social -->
   <div class="widget">
     <h4 class="widget-title">Social</h4>
@@ -49,8 +52,11 @@
       {{ end }}
     </ul>
   </div>
+  {{end}}
+  {{ if .Site.Params.sidebar.adv_enable }}
   <!-- advertisement -->
   <div class="widget">
     <img src="{{`images/promotion.png` | absURL}}" alt="" class="img-fluid">
   </div>
+  {{ end }}
 </div>
